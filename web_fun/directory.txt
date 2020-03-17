@@ -1,0 +1,10 @@
+documents/
+    codingDojo/
+        snake_case/
+        camelCase/
+        PascalCase/
+        web_fun/
+            html/
+                index.html
+            css/
+                index.css

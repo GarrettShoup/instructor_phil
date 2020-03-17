@@ -1,0 +1,23 @@
+/* this is external styling */
+body * {
+    display: inline-block;
+    width: 200px;
+    vertical-align: bottom;
+}
+/* selecing by tag name */
+h4 {
+    color: green;
+}
+
+/* selecting by class name */
+h1.purple {
+    border: 1px dotted red;
+    color: purple;
+    padding: 10px;
+    margin-left: 20px;
+}
+
+/* selecting by id */
+#bold {
+    font-style: italic;
+}

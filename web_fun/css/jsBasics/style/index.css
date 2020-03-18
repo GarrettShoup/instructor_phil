@@ -1,0 +1,45 @@
+#wrapper{
+    width: 970px;
+    height: 600px;
+    background-color: cyan;
+    margin: 0 auto;
+    background-image: url('./../images/jsloups.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-top: 10px;
+}
+#wrapper * {
+    opacity: .5;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+#header {
+    height: 60px;
+    width: 945px;
+    background-color: purple;
+    margin-left: 10px;
+    margin-bottom: 15px;
+}
+#nav {
+    height: 185px;
+    width: 165px;
+    background-color: tomato;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 10px;
+}
+#main {
+    height: 400px;
+    width: 750px;
+    background-color: darkkhaki;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 15px;
+}
+#footer {
+    height: 50px;
+    width: 950px;
+    background-color: lawngreen;
+    margin-top: 20px;
+    margin-left: 10px;
+}

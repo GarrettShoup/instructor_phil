@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #world .row div {
+            height: 50px;
+            width: 50px;
+            display: inline-block;
+        }
+        #world .row {
+            line-height: 0;
+        }
+        #world .row div.wall {
+            background-image: url('./pacman_images/wall.png');
+            background-size: cover;
+        }
+        #world .row div.coin {
+            background-image: url('./pacman_images/coin.gif');
+            background-size: cover;
+        }
+        #pacman {
+            background-image: url('./pacman_images/zRERkjv.gif');
+            background-size: cover;
+            height: 50px;
+            width: 50px;
+            position: absolute;
+            /* top: 50px;
+            left: 50px; */
+        }
+        #container {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="header"></h1>
+    <div id="container">
+        <div id="world"></div>
+        <div id="pacman"></div>
+    </div>
+    <script>
+
+        var world = [
+            [1,1,1,1,1,1,1,1,1,1],
+            [1,0,2,2,2,2,2,2,2,1],
+            [1,2,2,2,2,2,2,2,2,1],
+            [1,2,2,2,2,2,2,2,2,1],
+            [1,2,2,2,2,2,2,2,2,1],
+            [1,2,2,2,2,2,2,2,2,1],
+            [1,2,2,2,2,2,2,2,2,1],
+            [1,2,2,2,2,2,2,2,2,1],
+            [1,2,2,2,2,2,2,2,2,1],
+            [1,1,1,1,1,1,1,1,1,1],
+        ];
+
+        var pacman = {
+            'x':1,
+            'y':1
+        };
+
+        function DisplayPacman(){
+            document.getElementById('pacman').style.top=pacman['y']*50+'px';
+            document.getElementById('pacman').style.left=pacman['x']*50+'px';
+        }
+
+        function DisplayWorld(){
+            var worldBuilder="";
+            for(var y = 0; y < world.length; y++){
+                worldBuilder+="<div class='row'>"
+                for(var x = 0; x < world[y].length; x++) {
+                    // console.log(world[y][x]);
+                    if(world[y][x]==1){
+                        // create a wall
+                        worldBuilder+="<div class='wall'></div>";
+                    } else if(world[y][x]==2){
+                        // create coin
+                        worldBuilder+="<div class='coin'></div>"
+                    } else if(world[y][x]==0) {
+                        // create blank
+                        worldBuilder+="<div class='blank'></div>"
+                    }
+                }
+                worldBuilder+="</div>"
+            }
+            // console.log(worldBuilder)
+            document.getElementById('world').innerHTML=worldBuilder;
+        }
+
+        var div = document.getElementById('header');
+        div.innerText="Welcome to Pacman";
+
+        document.onkeydown = function(event) {
+            console.log(event);
+            if(event.keyCode==37 && world[pacman['y']][pacman['x'] - 1] != 1){
+                //move pacman left
+                pacman['x']--;
+            } else if(event.keyCode==38 && world[pacman['y']-1][pacman['x']] != 1){
+                // move pacman up
+                pacman['y']--;
+            } else if(event.keyCode==39 && world[pacman['y']][pacman['x'] + 1] != 1){
+                // move pacman right
+                pacman['x']++;
+            } else if(event.keyCode==40 && world[pacman['y']+1][pacman['x']] != 1){
+                // move pacman down
+                pacman['y']++;
+            }
+            if(world[pacman['y']][pacman['x']] == 2){
+                // pacman meet a coin
+                // add a score
+                console.log(`world[[pacman['y']][pacman['x']]]`, world[[pacman['y']][pacman['x']]])
+                world[pacman['y']][pacman['x']] = 0;
+                console.log(`world[[pacman['y']][pacman['x']]]`, world[[pacman['y']][pacman['x']]])
+            }
+            DisplayPacman();
+            DisplayWorld();
+        }
+
+        DisplayPacman();
+        DisplayWorld()
+    </script>
+</body>
+</html>

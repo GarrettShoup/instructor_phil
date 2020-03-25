@@ -1,0 +1,10 @@
+jQuery - JavaScript Library
+
+- select html
+    - DOM
+        - get
+        - set
+    - Events
+        - run a function
+
+jQuery == $ = function(selector(same as css))

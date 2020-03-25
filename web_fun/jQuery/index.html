@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // console.log('documnent is ready')
+            $('button').click(function(){
+                $('body').append('<p>Hello World</p>');
+                $(this).css('background-color','purple');
+                console.log($(this).text())
+            })
+            $('#btn1').click(function(){
+                console.log('btn1 selected')
+            })
+        })
+        </script>
+</head>
+<body>
+    <button id="btn1">Click Me 1</button>
+    <button>Click Me 2</button>
+    <button>Click Me 3</button>
+    <button>Click Me 4</button>
+    <script>
+        $('body').css('background-color', 'green');
+        console.log('document is loading...')
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokemOn</title>
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous">
+    </script>
+    <script>
+        $(document).ready(function(){
+            for(var i = 1; i<151;i++){
+                $('.container').append(`<img id=${i} src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${i}.png" alt="pokemon image">`);
+            }
+            // https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1.png
+            $('img').click(function(){
+                console.log($(this).attr('id'));
+            })
+        })
+    </script>
+    <style>
+
+        .container {
+            min-height: 400px;
+            width: 950px;
+            background-color: blanchedalmond;
+            border-radius: 30px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container"></div>
+</body>
+</html>

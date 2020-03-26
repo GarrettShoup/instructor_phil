@@ -16,6 +16,11 @@
             $('#btn1').click(function(){
                 console.log('btn1 selected')
             })
+            $('#btn4').click(function(){
+                $(this).slideUp(4000, function(){
+                    $('body').css('background-color', 'tomato');
+                })
+            })
         })
         </script>
 </head>
@@ -23,7 +28,7 @@
     <button id="btn1">Click Me 1</button>
     <button>Click Me 2</button>
     <button>Click Me 3</button>
-    <button>Click Me 4</button>
+    <button id="btn4">Click Me 4</button>
     <script>
         $('body').css('background-color', 'green');
         console.log('document is loading...')
